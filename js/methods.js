@@ -54,6 +54,12 @@
                     error: function(err){
                         console.log(err);
                     } 
+
+
+
+
+
+
                 });
 
                 // Alternate
@@ -73,9 +79,9 @@
 function readMatrix(){
     // var r = prompt('Enter number of rows');
     // var c = prompt('Enter number of columns');
-    var A = [[],[],[]];
-    for(var i=0; i<3; i++){
-        for(var j=0; j<3; j++){
+    var A = [[],[]];
+    for(var i=0; i<2; i++){
+        for(var j=0; j<2; j++){
             A[i][j] = prompt('Enter the value at (' + i + ',' + j +')');
         }
     }
@@ -84,13 +90,12 @@ function readMatrix(){
 
 var a = readMatrix();
 // var b = readMatrix();
-console.log(a);
 
 function displayMatrix(matrix){
     var ele = "<div>";
-    for(var i=0; i<3; i++){
+    for(var i=0; i<2; i++){
         ele += "<div>";
-        for(var j=0; j<3; j++){
+        for(var j=0; j<2; j++){
             ele += "<span>" + matrix[i][j] + "</span>";
         }
         ele +="</div>"
@@ -98,5 +103,22 @@ function displayMatrix(matrix){
     ele +="</div>";
     $('#matrix').html(ele);
 }
+
 displayMatrix(a);
 
+var b = readMatrix();
+function displayMatrix(matrix){
+    var elem = "<div>";
+    for(var k=0; k<2; k++){
+        elem += "<div>";
+        for(var l=0;l<2; l++){
+            elem += "<span>" + matrix[k][l] + "</span>";
+
+        }
+        elem +="</div>"
+    }
+    elem +="</div>";
+    $('#matrix').html(elem);
+
+}
+displayMatrix(b);
